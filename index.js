@@ -194,7 +194,7 @@ instance.prototype.config_fields = function () {
 			id: 'info',
 			width: 12,
 			label: 'Information',
-			value: 'This module will connect to a Roland Pro AV V-60HD Video Switcher.'
+			value: 'This module will connect to a Roland Pro AV V-600UHD Video Switcher.'
 		},
 		{
 			type: 'textinput',
