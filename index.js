@@ -410,7 +410,7 @@ instance.prototype.action = function(action) {
 		case 'select_pgm':
 			cmd = '\u0002PGM:' + options.source + ';';
 			break;
-		case 'select_pvw':
+		case 'select_pst':
 			cmd = '\u0002PST:' + options.source + ';';
 			break;
 		case 'select_aux':
