@@ -1,8 +1,10 @@
 {
 	"name": "roland-v600uhd",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"api_version": "1.0.0",
-	"keywords": [ "Vision Mixer" ],
+	"keywords": [
+		"Vision Mixer"
+	],
 	"manufacturer": "Roland",
 	"product": "V-600UHD",
 	"shortname": "v-600uhd",
