@@ -462,7 +462,7 @@ instance.prototype.action = function(action) {
 
 	if (cmd !== undefined) {
 		if (self.socket !== undefined && self.socket.connected) {
-			self.socket.send(cmd);
+			self.socket.send(cmd + '\r\n');
 		} else {
 			debug('Socket not connected :(');
 		}
