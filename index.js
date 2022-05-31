@@ -408,55 +408,55 @@ instance.prototype.action = function(action) {
 	
 	switch(action.action) {
 		case 'select_pgm':
-			cmd = '\u0002PGM:' + options.source + ';';
+			cmd = 'PGM:' + options.source + ';';
 			break;
 		case 'select_pst':
-			cmd = '\u0002PST:' + options.source + ';';
+			cmd = 'PST:' + options.source + ';';
 			break;
 		case 'select_aux':
-			cmd = '\u0002AUX:' + options.source + ';';
+			cmd = 'AUX:' + options.source + ';';
 			break;
 		case 'select_transition_pattern':
-			cmd = '\u0002TRS:' + options.transitionpattern + ';';
+			cmd = 'TRS:' + options.transitionpattern + ';';
 			break;
 		case 'set_transition_time':
-			cmd = '\u0002TIM:' + options.transitiontime + ';';
+			cmd = 'TIM:' + options.transitiontime + ';';
 			break;
 		case 'auto':
-			cmd = '\u0002ATO;';
+			cmd = 'ATO;';
 			break;
 		case 'cut':
-			cmd = '\u0002CUT;';
+			cmd = 'CUT;';
 			break;
 		case 'select_composition_type':
-			cmd = '\u0002CTY:' + options.compositiontype + ';';
+			cmd = 'CTY:' + options.compositiontype + ';';
 			break;
 		case 'select_dsk_type':
-			cmd = '\u0002DTY:' + options.dsktype + ';';
+			cmd = 'DTY:' + options.dsktype + ';';
 			break;
 		case 'composition':
-			cmd = '\u0002CMP;';
+			cmd = 'CMP;';
 			break;
 		case 'dsk':
-			cmd = '\u0002DSK;';
+			cmd = 'DSK;';
 			break;
 		case 'set_outputfade_onoff':
-			cmd = '\u0002FDE:' + options.setting + ';';
+			cmd = 'FDE:' + options.setting + ';';
 			break;
 		case 'set_outputfade_time':
-			cmd = '\u0002FDT:' + options.transitiontime + ';';
+			cmd = 'FDT:' + options.transitiontime + ';';
 			break;
 		case 'audio_input_level':
-			cmd = '\u0002IAL:' + options.audiochannel + ',' + options.level + ';';
+			cmd = 'IAL:' + options.audiochannel + ',' + options.level + ';';
 			break;
 		case 'audio_master_level':
-			cmd = '\u0002OAL:' + options.level + ';';
+			cmd = 'OAL:' + options.level + ';';
 			break;
 		case 'audio_aux_level':
-			cmd = '\u0002OAX:' + options.level + ';';
+			cmd = 'OAX:' + options.level + ';';
 			break;
 		case 'memory':
-			cmd = '\u0002MEM:' + options.memory + ';';
+			cmd = 'MEM:' + options.memory + ';';
 			break;
 	}
 
