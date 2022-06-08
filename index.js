@@ -17,14 +17,14 @@ function instance(system, id, config) {
 }
 
 instance.prototype.CHOICES_INPUTS = [
-	{ id: '0', label: 'HDMI / RGB IN 1'},
-	{ id: '1', label: 'HDMI IN 2'},
-	{ id: '2', label: 'HDMI IN 3'},
-	{ id: '3', label: 'HDMI IN 4'},
-	{ id: '4', label: 'SDI IN 5'},
-	{ id: '5', label: 'SDI IN 6'},
-	{ id: '6', label: 'Still 1'},
-	{ id: '7', label: 'Still 2 / Pattern Generator'}
+	{ id: '0', label: 'Cross-Point 1'},
+	{ id: '1', label: 'Cross-Point 2'},
+	{ id: '2', label: 'Cross-Point 3'},
+	{ id: '3', label: 'Cross-Point 4'},
+	{ id: '4', label: 'Cross-Point 5'},
+	{ id: '5', label: 'Cross-Point 6'},
+	{ id: '6', label: 'Cross-Point 7'},
+	{ id: '7', label: 'Cross-Point 8'}
 ]
 
 instance.prototype.CHOICES_AUDIOINPUTS = [
