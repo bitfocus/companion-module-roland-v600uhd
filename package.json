@@ -1,14 +1,6 @@
 {
 	"name": "roland-v600uhd",
-	"version": "1.0.6",
-	"api_version": "1.0.0",
-	"keywords": [
-		"Vision Mixer"
-	],
-	"manufacturer": "Roland",
-	"product": "V-600UHD",
-	"shortname": "v-600uhd",
-	"description": "",
+	"version": "2.0.0",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
@@ -17,10 +9,11 @@
 		"type": "git",
 		"url": "git+https://github.com/bitfocus/companion-module-roland-v600uhd.git"
 	},
-	"author": "Joseph Adams <josephdadams@gmail.com>",
 	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/bitfocus/companion-module-roland-v600uhd/issues"
+	"dependencies": {
+		"@companion-module/base": "~1.4.1"
 	},
-	"homepage": "https://github.com/bitfocus/companion-module-roland-v600uhd#readme"
+	"devDependencies": {
+		"@companion-module/tools": "^1.3.2"
+	}
 }
