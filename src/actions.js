@@ -45,10 +45,10 @@ module.exports = {
 			options: [
 				{
 					type: 'dropdown',
-					label: 'Transition Pattern',
-					id: 'transitionpattern',
+					label: 'Source',
+					id: 'source',
 					default: '0',
-					choices: self.CHOICES_TRANSITION_PATTERNS
+					choices: self.CHOICES_INPUTS
 				}
 			],
 			callback: async (action) => {
