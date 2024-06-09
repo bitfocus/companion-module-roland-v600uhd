@@ -2,6 +2,7 @@ const constants = require('./constants')
 
 module.exports = {
 	initVariables() {
+		/*
 		try {
 			let variables = [
 				{hardware_model: 'undefined'},
@@ -12,9 +13,11 @@ module.exports = {
 		catch(error) {
 			this.log('error', `Error initializing variables: ${error.toString()}`)
 		}
+		*/
 	},
 
 	checkVariables() {
+		/*
 		try {
 			let variables = [
 				{hardware_model: self.MODEL},
@@ -25,5 +28,6 @@ module.exports = {
 		catch(error) {
 			this.log('error', `Error checking variables: ${error.toString()}`)
 		}
+		*/
 	}
 }
