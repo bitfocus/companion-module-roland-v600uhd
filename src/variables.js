@@ -2,6 +2,7 @@ const constants = require('./constants')
 
 module.exports = {
 	initVariables() {
+		//testing comment for file change
 		/*
 		try {
 			let variables = [
