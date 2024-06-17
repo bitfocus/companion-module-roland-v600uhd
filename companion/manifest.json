@@ -3,7 +3,7 @@
 	"name": "roland-v600uhd",
 	"shortname": "v-600uhd",
 	"description": "",
-	"version": "0.0.0",
+	"version": "2.1.0",
 	"license": "MIT",
 	"repository": "git+https://github.com/bitfocus/companion-module-roland-v600uhd.git",
 	"bugs": "https://github.com/bitfocus/companion-module-roland-v600uhd/issues",

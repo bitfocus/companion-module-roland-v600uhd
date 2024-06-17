@@ -2,33 +2,34 @@ const constants = require('./constants')
 
 module.exports = {
 	initVariables() {
-		//testing comment for file change
-		/*
-		try {
-			let variables = [
-				{hardware_model: 'undefined'},
-				{firmware_version: 'undefined'}
-			]
-			this.setVariableDefinitions(variables);
+		let self = this;
+
+		self.logDebug('Initializing variables');
+
+		// The dynamic variable exposed to Companion
+		self.currentState.dynamicVariables = {
+			model: 'N/A',
+			version: 'N/A',
 		}
-		catch(error) {
-			this.log('error', `Error initializing variables: ${error.toString()}`)
-		}
-		*/
+		self.currentState.dynamicVariablesDefs = [
+			{
+				name: 'Model',
+				variableId: 'model',
+			},
+			{
+				name: 'Version',
+				variableId: 'version',
+			},
+		]
+		self.setVariableDefinitions(self.currentState.dynamicVariablesDefs) 
+		self.setVariableValues(self.currentState.dynamicVariables)
 	},
 
 	checkVariables() {
-		/*
-		try {
-			let variables = [
-				{hardware_model: self.MODEL},
-				{firmware_version: self.VERSION}
-			]
-			this.setVariableValues(variables)
-		}
-		catch(error) {
-			this.log('error', `Error checking variables: ${error.toString()}`)
-		}
-		*/
+		let self = this;
+		
+		self.logDebug('Checking variables and updating.');
+
+		self.setVariableValues(self.currentState.dynamicVariables)
 	}
 }

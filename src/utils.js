@@ -21,10 +21,15 @@ module.exports = {
 		
 			self.socket.on('error', function (err) {
 				self.log('error','Network error: ' + err.message);
+				self.stopPoll();
+				// Do not stay in OK status if device is off 
+				self.updateStatus(InstanceStatus.Connecting);
 			});
 	
 			self.socket.on('connect', function () {
 				self.updateStatus(InstanceStatus.Ok);
+				self.log('info', 'Connected');
+				self.startPoll();
 			});
 	
 			self.socket.on('data', function(buffer) {
@@ -36,10 +41,40 @@ module.exports = {
 		}
 	},
 
+	logDebug(line) {
+		let self = this;
+
+		if (line !== undefined) {
+			if (self.config.verbose) {
+				self.log('debug', line.toString());
+			}
+		}
+	},
+
+	// Poll to get version information and see if connection active
+	startPoll() {
+		let self = this;
+		self.logDebug('Start polling');
+		self.pollTimer = setInterval(() => {
+			self.sendCommand('VER;'); 
+		}, 10000)
+	},
+
+	stopPoll() {
+		let self = this;
+		
+		if (self.pollTimer !== undefined) {
+			self.logDebug('Stop polling');
+			clearInterval(self.pollTimer)
+			delete self.pollTimer
+		}
+	},
+
 	sendCommand(cmd) {
 		let self = this;
 
 		if (cmd !== undefined) {
+			self.logDebug('send: [' + cmd + ']');
 			if (self.socket !== undefined && self.socket.isConnected) {
 				self.socket.send(cmd + '\r\n');
 			} else {
@@ -52,22 +87,18 @@ module.exports = {
 	updateData: function(data) {
 		let self = this;
 	
-		if (self.config.verbose) {
-			self.log('debug', data);
-		}
+		self.logDebug('indata [' + data + ']');
 	
 		if(data.trim() =='Enter password:') {
 			self.updateStatus(InstanceStatus.UnknownWarning, 'Authenticating');
-			self.log('info', 'Sending passcode: ' + self.config.password);
+			self.log('info', 'Authentication requested. Sending passcode');
+			self.logDebug('Sending passcode ' + self.config.password);
 			self.socket.send(self.config.password + '\n');
 		}
 		else if (data.trim() == 'Welcome to Roland V-600UHD.') {
 			self.updateStatus(InstanceStatus.Ok);
 			self.log('info', 'Authenticated.');
 			self.sendCommand('VER;'); //request version info
-			//self.sendRawCommand('VER'); //request version info
-			//self.startInterval(); //request tally states
-			//self.subscribeToTally(); //request tally changes
 		}
 		else if (data.trim() == 'ERR:0;') {
 			//an error with something that it received
@@ -96,8 +127,8 @@ module.exports = {
 										dataSuffix = dataSet[1].toString().split(',');
 	
 										if (dataPrefix.indexOf('VER') > -1) {
-											self.MODEL = dataSuffix[0].toString();
-											self.VERSION = dataSuffix[1].toString();
+											self.currentState.dynamicVariables['model']   = dataSuffix[0].toString();
+											self.currentState.dynamicVariables['version'] = dataSuffix[1].toString();
 										}
 						
 									}
