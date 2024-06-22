@@ -26,8 +26,7 @@ This module will allow you to control a Roland V-600UHD video switcher.
 * Adjust volume level for master out
 * Adjust volume level for AUX-bus audio
 * Call up memory
-* Get firmware version
 
-**Variables: **
-* model - firmware hardware model
+**Variables:**
+* product - firmware hardware model
 * version - firmware version

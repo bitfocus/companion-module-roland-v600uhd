@@ -127,8 +127,14 @@ module.exports = {
 										dataSuffix = dataSet[1].toString().split(',');
 	
 										if (dataPrefix.indexOf('VER') > -1) {
-											self.currentState.dynamicVariables['model']   = dataSuffix[0].toString();
-											self.currentState.dynamicVariables['version'] = dataSuffix[1].toString();
+											self.data.product = dataSuffix[0].toString();
+											self.data.version = dataSuffix[1].toString();
+											self.setVariableValues({
+												product: self.data.product ,
+												version: self.data.version ,
+											})
+											//self.currentState.dynamicVariables['model']   = dataSuffix[0].toString();
+											//self.currentState.dynamicVariables['version'] = dataSuffix[1].toString();
 										}
 						
 									}

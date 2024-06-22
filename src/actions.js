@@ -169,15 +169,6 @@ module.exports = {
 			}
 		};
 
-		actions.ver = {
-			name: 'Get firmware version',
-			options: [],
-			callback: async (action) => {
-				let options = action.options;
-				let cmd = 'VER;';
-				self.sendCommand(cmd);
-			}
-		};
 		
 		actions.set_outputfade_onoff = {
 			name: 'Set Output Fade On/Off',

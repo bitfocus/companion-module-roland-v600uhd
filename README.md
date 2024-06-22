@@ -6,7 +6,6 @@ See HELP.md and LICENSE
 * Function:
   * Support password because Roland firmware starting at 3.00 added a required 4 character password
   * Allow verbose debug logging
-  * Get the version information into variables
 * Add variables:
   * hardware model
   * firmware version

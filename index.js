@@ -28,21 +28,15 @@ class v600uhdInstance extends InstanceBase {
 		});
 
 		this.socket = undefined;
+
+		this.data = {
+			product: '',
+			version: '',
+		}
 	}
 
 
-	/**
-	 * Copied from ProPresenter
-	 *
-	 * .internal contains the internal state of the module
-	 * .dynamicVariable contains the values of the dynamic variables
-	 * .dynamicVariablesDefs contains the definitions of the dynamic variables - this list is passed to this.setVariableDefinitions() so  WebUI etc can know what the module vars are.
-	 */
-	currentState = {
-		internal: {},
-		dynamicVariables: {},
-		dynamicVariablesDefs: [],
-	}
+	
 
 	async destroy() {
 		if (this.socket !== undefined) {
