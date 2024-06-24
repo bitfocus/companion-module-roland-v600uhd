@@ -133,8 +133,7 @@ module.exports = {
 												product: self.data.product ,
 												version: self.data.version ,
 											})
-											//self.currentState.dynamicVariables['model']   = dataSuffix[0].toString();
-											//self.currentState.dynamicVariables['version'] = dataSuffix[1].toString();
+
 										}
 						
 									}
@@ -148,7 +147,7 @@ module.exports = {
 				
 					//now update feedbacks and variables
 					//self.checkFeedbacks();
-					self.checkVariables();
+
 				}
 			}
 			catch(error) {
