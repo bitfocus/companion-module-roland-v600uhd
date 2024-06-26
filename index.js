@@ -28,12 +28,21 @@ class v600uhdInstance extends InstanceBase {
 		});
 
 		this.socket = undefined;
+
+		this.data = {
+			product: '',
+			version: '',
+		}
 	}
+
+
+	
 
 	async destroy() {
 		if (this.socket !== undefined) {
 			this.socket.destroy();
 		}
+		this.stopPoll();
 	}
 
 	async init(config) {

@@ -2,16 +2,23 @@ const constants = require('./constants')
 
 module.exports = {
 	initVariables() {
+		let self = this;
+
+		self.logDebug('Initializing variables');
+
 		let variables = []
 
-		this.setVariableDefinitions(variables);
+		variables.push({variableId: 'product', name: 'Product Name'})
+		variables.push({variableId: 'version', name: 'Version'})
+		
+		self.setVariableDefinitions(variables)
+
+		self.setVariableValues({
+			product: '',
+			version: '',
+		})
+		
 	},
 
-	checkVariables() {
-		try {
-		}
-		catch(error) {
-			this.log('error', `Error checking variables: ${error.toString()}`)
-		}
-	}
+
 }

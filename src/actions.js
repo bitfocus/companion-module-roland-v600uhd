@@ -168,6 +168,7 @@ module.exports = {
 				self.sendCommand(cmd);
 			}
 		};
+
 		
 		actions.set_outputfade_onoff = {
 			name: 'Set Output Fade On/Off',
